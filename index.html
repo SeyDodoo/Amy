@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffe6e6;
+            color: #d63384;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 90%;
+            max-width: 500px;
+        }
+        button {
+            background-color: #ff4d79;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 200px;
+        }
+        button:hover {
+            background-color: #ff1a66;
+        }
+        #noButton {
+            position: absolute;
+        }
+        #loveMessage {
+            display: none;
+            margin-top: 20px;
+        }
+        img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+        @media (max-width: 600px) {
+            h1, h2 {
+                font-size: 20px;
+            }
+            button {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hey Amy! 💕</h1>
+        <h2>Will you be my Valentine? 😊</h2>
+        <button onclick="yes()">Yes 💖</button>
+        <button id="noButton" onmouseover="moveNoButton()">No 😢</button>
+        
+        <div id="loveMessage">
+            <h1>I LOVE YOU!!! ❤️🥰</h1>
+            <img src="picture1.jpg" alt="Us Together">
+        </div>
+    </div>
+
+    <script>
+        function yes() {
+            document.getElementById('loveMessage').style.display = 'block';
+        }
+
+        function moveNoButton() {
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 50);
+            document.getElementById('noButton').style.left = `${x}px`;
+            document.getElementById('noButton').style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
